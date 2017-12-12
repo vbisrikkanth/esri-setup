@@ -26,7 +26,7 @@ async function plotExample2() {
         basemap: "streets"
     });
 
-    var view = new MapView({
+    let view = new MapView({
         container: "viewDiv", // Reference to the scene div created in step 5
         map: map, // Reference to the map object created before the scene
         zoom: 4, // Sets zoom level based on level of detail (LOD)
@@ -34,5 +34,28 @@ async function plotExample2() {
     });
 }
 
+async function threeDimensionMap() {
+    let [Map, SceneView] = await esriLoader.loadModules(["esri/Map", "esri/views/SceneView"]);
 
-plotExample2();
+    let map = new Map({
+        basemap: "streets",
+        ground: "world-elevation"
+    });
+    let view = new SceneView({
+        container: "viewDiv", // Reference to the scene div created in step 5
+        map: map, // Reference to the map object created before the scene
+        scale: 50000000, // Sets the initial scale to 1:50,000,000
+        center: [-101.17, 21.78] // Sets the center point of view with lon/lat
+    });
+
+
+}
+
+//Example for mapview
+//plotMap();
+
+//Example for map
+//plotExample2();
+
+//Example for 3D map
+threeDimensionMap();
