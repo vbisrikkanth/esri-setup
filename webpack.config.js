@@ -20,6 +20,7 @@ module.exports = {
   },
   output: {
     filename: 'bundle.js',
+    library:['esriSample'],
     path: path.resolve(__dirname, 'dist')
   },
   devServer: {

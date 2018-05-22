@@ -58,4 +58,5 @@ async function threeDimensionMap() {
 //plotExample2();
 
 //Example for 3D map
-threeDimensionMap();
+//threeDimensionMap();
+export {plotMap,plotExample2, threeDimensionMap};
